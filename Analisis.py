@@ -3,7 +3,7 @@ from tkinter import ttk, messagebox, filedialog, font as tkfont
 from PIL import Image, ImageTk
 import pandas as pd
 import matplotlib
-matplotlib.use('Agg')  # Configurar el backend antes de importar pyplot
+matplotlib.use('Agg') 
 import matplotlib.pyplot as plt
 from pathlib import Path
 import nltk
