@@ -86,12 +86,38 @@ class TrendAnalysisApp:
         default_font = tkfont.nametofont("TkDefaultFont")
         default_font.configure(family="Segoe UI", size=9)
         
-        # Estilos personalizados
-        style.configure('TButton', font=('Segoe UI', 10), padding=6)
+        # Colores azul aqua en diferentes tonalidades
+        style.configure('TButton', 
+                    font=('Segoe UI', 10), 
+                    padding=6,
+                    background='#00b3b3',  
+                    foreground='white',
+                    bordercolor='#00838f',
+                    focuscolor='#4fc3f7',
+                    lightcolor='#4fc3f7',
+                    darkcolor='#00838f')
+        
+        style.map('TButton',
+                background=[('active', '#00838f'), ('pressed', '#006064')],
+                relief=[('pressed', 'sunken'), ('!pressed', 'raised')])
+        
+        # Estilo para botones de archivos
+        style.configure('File.TButton', 
+                    font=('Segoe UI', 9), 
+                    padding=4, 
+                    width=20,
+                    background='#80deea',  
+                    foreground='#004d40',
+                    bordercolor='#4fb3bf')
+        
+        style.map('File.TButton',
+                background=[('active', '#4fb3bf'), ('pressed', '#00838f')],
+                foreground=[('active', 'white')])
+        
+        # Estilos para etiquetas
         style.configure('Title.TLabel', font=('Segoe UI', 16, 'bold'), background="#2c3e50", foreground="white")
         style.configure('Subtitle.TLabel', font=('Segoe UI', 10), background="#2c3e50", foreground="#bdc3c7")
         style.configure('Status.TLabel', font=('Segoe UI', 10), background="#ecf0f1", foreground="#2c3e50")
-        style.configure('File.TButton', font=('Segoe UI', 9), padding=4, width=20)
     
     def create_title_frame(self):
         title_frame = tk.Frame(self.main_frame, bg="#2c3e50")
