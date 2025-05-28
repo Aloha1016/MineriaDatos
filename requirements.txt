@@ -1,0 +1,6 @@
+twscrape
+pandas
+pillow
+matplotlib
+nltk
+wordcloud
